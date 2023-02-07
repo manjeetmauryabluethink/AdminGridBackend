@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="admin_grid_listing_data_source" xsi:type="string">edferetwrewdfed</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="edferetwrewdfed" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">bluethink_admin_table</argument>
+            <argument name="resourceModel" xsi:type="string">Bluethinkinc\AdminGrid\Model\ResourceModel\View</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="revicegrid_listing_data_source" xsi:type="string">edfedfed</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="edfedfed" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">grid_admin_table</argument>
+            <argument name="resourceModel" xsi:type="string">Bluethinkinc\AdminGrid\Model\ResourceModel\Show</argument>
+        </arguments>
+    </virtualType>
+     <preference for="Bluethinkinc\AdminGrid\Api\Data\BlockSearchResultsInterface"
+                type="Bluethinkinc\AdminGrid\Model\BlockSearchResults" />
+                
+     <preference for="Bluethinkinc\AdminGrid\Api\BlockRepositoryInterface" type="Bluethinkinc\AdminGrid\Model\BlockRepository"/>
+
+     <preference for="Bluethinkinc\AdminGrid\Api\BlogInterface"
+      type="Bluethinkinc\AdminGrid\Model\Blog"/>
+
+    <preference for="Bluethinkinc\AdminGrid\Api\Data\ViewInterface"
+    type="Bluethinkinc\AdminGrid\Model\View"/>
+
+</config>

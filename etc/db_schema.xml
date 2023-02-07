@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="bluethink_admin_table" resource="default" engine="innodb" comment="Admingrid  Table">
+    <column xsi:type="int" name="bluethink_id" unsigned="false" nullable="false" identity="true"
+                comment="Bluethink ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Bluethink Title"/>
+          <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Bluethink Description"/>
+            <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" identity="false"
+                comment="Store ID"/>
+                 <column xsi:type="smallint" name="is_active" unsigned="false" nullable="false" identity="false"
+                default="1" comment="Is Block Active"/>
+         <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Page Creation Time"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+     <column name="bluethink_id"/>
+        </constraint>
+           <index referenceId="BLUETHINK_ADMINGRID_TABLE_TITLE_DESCRIPTION" indexType="fulltext">
+            <column name="title"/>
+            <column name="description"/>
+        </index>
+    </table>
+
+    <table name="grid_admin_table" resource="default" engine="innodb" comment="Admingrid  Table">
+    <column xsi:type="int" name="bluethink_id" unsigned="false" nullable="false" identity="true"
+                comment="Bluethink ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Bluethink Title"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Bluethink Description"/>
+          <column xsi:type="varchar" name="status" nullable="false" length="255" comment="Bluethink Status"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Page Creation Time"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+    <column name="bluethink_id"/>
+        </constraint>
+    </table>
+    </schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Bluethinkinc_AdminGrid::promo" title="BluethinkInc" translate="title" module="Bluethinkinc_AdminGrid" sortOrder="10" resource="Bluethinkinc_AdminGrid::promo"/>
+
+       <add id="Bluethinkinc_AdminGrid::admingrid" title="Admin Grid" translate="title" module="Bluethinkinc_AdminGrid" sortOrder="15" parent="Bluethinkinc_AdminGrid::promo"  resource="Bluethinkinc_AdminGrid::admingrid"/>
+
+       <add id="Bluethinkinc_AdminGrid::admin" title="Traning Grid" translate="title" module="Bluethinkinc_AdminGrid" sortOrder="15" action="grid/admin/index" parent="Bluethinkinc_AdminGrid::admingrid"  resource="Bluethinkinc_AdminGrid::admin"/>
+
+        <add id="Bluethinkinc_AdminGrid::revice" title="Revice Admin Grid" translate="title" module="Bluethinkinc_AdminGrid" sortOrder="10" parent="Bluethinkinc_AdminGrid::promo"  resource="Bluethink_AdminGrid::revice"/>
+
+        <add id="Bluethinkinc_AdminGrid::custom" title="Admin Grid" translate="title" module="Bluethinkinc_AdminGrid" sortOrder="15" parent="Bluethinkinc_AdminGrid::revice"  resource="Bluethinkinc_AdminGrid::custom" action="grid/admin/revicegrid"/>
+
+         <add id="Bluethinkinc_AdminGrid::random" title="Manage Wishlist" translate="title" module="Bluethinkinc_AdminGrid" sortOrder="15" parent="Bluethinkinc_AdminGrid::revice"  resource="Bluethinkinc_AdminGrid::random" action="csvdata/index/export"/>
+
+    </menu>
+</config>

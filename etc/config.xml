@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <bttraning>
+            <defaults>
+                <!-- <customerGroup>2,3,867</customerGroup> -->
+               <postcodes></postcodes>
+               <!-- when we need to already selectted value then inside
+                option tag put value in fieldtag -->
+            </defaults>
+        </bttraning>
+           <bttraning>
+            <btinc>
+                <!-- <customerGroup>2,3,867</customerGroup> -->
+               <customText>Manjeet</customText>
+               <!-- when we need to already selectted value then inside
+                option tag put value in fieldtag -->
+            </btinc>
+        </bttraning>
+    </default>
+    <stores>
+    <en_na>
+       <bttraning>
+           <defaults>
+               <postcodes></postcodes>
+           </defaults>
+       </bttraning>
+    </en_na>
+</stores>
+</config>

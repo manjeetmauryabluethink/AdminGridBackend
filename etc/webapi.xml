@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="POST" url="/V1/saveblog">
+        <service class="Bluethinkinc\AdminGrid\Api\BlogInterface" method="saveBlog"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+     <route method="GET" url="/V1/viewData/:id">
+        <service class="Bluethinkinc\AdminGrid\Api\BlogInterface" method="viewData"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+     <route method="GET" url="/V1/deleteData/:id">
+        <service class="Bluethinkinc\AdminGrid\Api\BlogInterface" method="deleteData"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+     <route method="GET" url="/V1/getById/:blockId">
+        <service class="Bluethinkinc\AdminGrid\Api\BlockRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route method="POST" url="/V1/save/">
+        <service class="Bluethinkinc\AdminGrid\Api\BlockRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route method="DELETE" url="/V1/deleteById/:blockId">
+        <service class="Bluethinkinc\AdminGrid\Api\BlockRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+     <route method="PUT" url="/V1/save/:blockId">
+        <service class="Bluethinkinc\AdminGrid\Api\BlockRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+</routes>

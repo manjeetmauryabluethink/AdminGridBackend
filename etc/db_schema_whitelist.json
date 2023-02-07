@@ -1,0 +1,37 @@
+{
+    "bluethink_admin_table": {
+        "column": {
+            "bluethink_id": true,
+            "title": true,
+            "created_at": true,
+            "description": true,
+            "store_id": true,
+            "is_active": true,
+            "extencustom": true,
+            "custom": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        },
+        "index": {
+            "BLUETHINK_ADMIN_TABLE_TITLE_DESCRIPTION": true
+        }
+    },
+    "grid_admin_table": {
+        "column": {
+            "bluethink_id": true,
+            "title": true,
+            "description": true,
+            "status": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "quote": {
+        "column": {
+            "rhphone": true
+        }
+    }
+}

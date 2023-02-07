@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+      <tab id="traning" translate="label" sortOrder="200">
+            <label>Bluethink Traning</label>
+        </tab>
+        <section id="bttraning" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Admin Grid</label>
+            <tab>traning</tab>
+            <resource>Bluethinkinc_AdminGrid::promo</resource>
+            <group id="contact" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Bluethink AdminGrid</label>
+                 <!-- <resource>Bluethinkinc_AdminGrid::promo</resource> -->
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                    <label>Enable Bluethink Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <backend_model>Magento\Contact\Model\System\Config\Backend\Links</backend_model>
+                </field>
+            </group>
+            <!-- type="obscure" for secure password like when I have trying to inspect and change type="text" then getting *****  -->
+            <group id="btinc" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Bluethink Configuration</label>
+                <field id="enabled" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                    <label> Bluethink Passssword</label>
+                </field>
+                <field id="state_required" translate="label" type="multiselect"  sortOrder="1" showInDefault="1" showInStore="1" canRestore="0" showInWebsite="1">
+                    <label>State is Required for</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <frontend_model>Bluethinkinc\AdminGrid\Model\Config\MyFieldDisabled</frontend_model>
+
+                    <can_be_empty>1</can_be_empty>
+                    <attribute type="disabled">1</attribute>
+                </field>
+                 <field id="customerGroup" translate="label" type="multiselect" sortOrder="1" showInDefault="1">
+                    <label>Customer Group</label>
+                    <source_model>Magento\Customer\Model\ResourceModel\Group\Collection</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                  <field id="catagory" translate="label" type="multiselect" sortOrder="1" showInDefault="1">
+                    <label>Category Group</label>
+                    <source_model>Bluethinkinc\AdminGrid\Model\ResourceModel\Category\Collection</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                 <field id="customText" translate="label" type="text" sortOrder="1" showInDefault="1" canRestore="1" showInWebsite="1" showInStore="1">
+                    <label>Text Box</label>
+                    <attribute type="disabled">1</attribute>
+                </field>
+                <field id="upload_image_id" translate="label comment" type="image" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Image</label>
+                    <backend_model>Bluethinkinc\AdminGrid\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">bluethinksystem</base_url>
+                </field>
+                     <field id="firstday" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>First Day of Week</label>
+                    <source_model>Bluethinkinc\AdminGrid\Model\Config\Source\Locale\Weekdays</source_model>
+                </field>
+                 <field id="country_id" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1">
+                    <label>Country</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <frontend_class>countries</frontend_class>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="region_id" translate="label" type="text" sortOrder="27" showInDefault="1" showInWebsite="1">
+                    <label>Region/State</label>
+                </field>
+
+                 <!-- <field id="demo_image" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Bluethinkinc\AdminGrid\Block\DemoImage</frontend_model>
+                </field> -->
+            </group>
+            <group id="defaults" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Default Tax Destination Calculation</label>
+                <field id="country" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default Country</label>
+                    <source_model>Bluethinkinc\AdminGrid\Model\System\Config\Source\Tax\Country</source_model>
+                </field>
+                <field id="region" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default State</label>
+                    <frontend_model>Bluethinkinc\AdminGrid\Block\Adminhtml\Frontend\Region\Updater</frontend_model>
+                    <source_model>Bluethinkinc\AdminGrid\Model\System\Config\Source\Tax\Region</source_model>
+                </field>
+            </group>
+        </section>
+
+        <section id="custommanjeet" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Bluethink AdminGrid</label>
+            <tab>sales</tab>
+            <resource>Magento_Sales::config_sales</resource>
+            <group id="addTocustomInsales" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1">
+                <label>Bluethink AdminGrid</label>
+                <field id="discount" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Bluethink</label>
+                    <validate>required-number validate-number</validate>
+                </field>
+                </group>
+        </section>
+    </system>
+</config>

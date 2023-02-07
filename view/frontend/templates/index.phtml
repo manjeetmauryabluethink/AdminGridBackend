@@ -1,0 +1,30 @@
+
+
+<span>Selected Us State:</span>
+<?php
+$collections = $block->getConfigValue(); 
+if(is_array($collections))
+{
+   if(count($collections)==1)
+   {
+    
+foreach ($collections as $key => $collection): ?>
+  <?= $collection ?>
+<?php endforeach;
+   }
+   else 
+   {
+    ?>
+    <select class="select"  style="width:40%">
+    <option>--please Select--</option><?php 
+foreach ($collections as $key => $collection): ?>
+    <option value="<?php $key ?>"><?= $collection ?></option>
+<?php endforeach;
+   }
+}
+else 
+{
+    echo $collections;
+}
+?>
+</select>
